@@ -41,11 +41,15 @@ const wormholeConfig: config.WormholeConnectConfig = {
     network: generatedConfig.network as 'Mainnet' | 'Testnet',
     chains: generatedConfig.chains as config.WormholeConnectConfig['chains'],
     tokens: generatedConfig.tokens,
+    rpcs: {
+        Celo: 'https://forno.celo.org',
+        Monad: 'https://rpc3.monad.xyz',
+    },
     ui: {
         title: 'Wormhole NTT UI - Mainnet',
         defaultInputs: {
-            source: { chain: 'Base' },
-            destination: { chain: 'Ethereum' },
+            source: { chain: 'Celo' },
+            destination: { chain: 'Monad' },
         },
         walletConnectProjectId: clientConfig.walletConnectProjectId,
     },
